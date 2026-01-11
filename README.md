@@ -11,24 +11,7 @@ Python scripts to program the LMX2594 frequency synthesizer via USB2ANY SPI inte
 
 ## Hardware Connections
 
-Using a 10-pin SPI wire to connect the USB2ANY and the LMX2594, and connect the LMX2594 with a +5v power supply:
-
-```
-USB2ANY <-> LMX2594 Module
--------------------------
-PA3      <-> LMX2594-CLK   (SPI Clock)
-PA6      <-> LMX2594-LE    (SPI Latch Enable / CS)
-PA2      <-> LMX2594-DATA  (SPI MOSI)
-PA1      <-> LMX2594-MUX   (Lock Detect output from MUXout)
-PA7      <-> LMX2594-CE    (Chip Enable)
-
-Power Connections:
-5V       <-> LMX2594 +5V
-GND      <-> LMX2594 GND
-
-Reference Input:
-50MHz    <-> LMX2594 FINC/FDEC (Reference Clock Input, usually on-board)
-```
+Using a 10-pin SPI wire to connect the USB2ANY and the LMX2594, and connect the LMX2594 with a +5v power supply. Check official technical documents of the two devices for verification.
 
 ## Installation
 
@@ -178,16 +161,11 @@ Use `--debug` flag for detailed output including:
 - Recalibration attempts
 - Timing information
 
-### Verification
-
-Compare with TICS Pro settings in `examples/3600_Blue_LED_ON.tcs` and spectrum capture in `examples/3600_Blue_LED_ON_result.json` for validation.
-
 ## Files
 
 - `usb2anyapi.py`: USB2ANY SPI interface wrapper
 - `lmx2594.py`: LMX2594 register driver and frequency calculation
 - `frequency_generator.py`: Main CLI application
-- `requirements.txt`: Python dependencies (minimal)
 - `README.md`: This documentation
 
 ## Safety Notes
