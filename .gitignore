@@ -1,5 +1,7 @@
-./venv
-./scripts/__pycache__
-./cursor
-./examples/
-./docs
+.venv/
+scripts/__pycache__/
+.cursor/
+examples/
+
+# Documents
+docs/
